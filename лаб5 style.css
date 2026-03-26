@@ -1,0 +1,230 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Шапка */
+header {
+    background-color: #2c3e50;
+    padding: 20px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Главное меню */
+.main-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #34495e;
+    transition: background 0.3s;
+    font-size: 18px;
+}
+
+.main-menu a:hover {
+    background-color: #3498db;
+}
+
+.main-menu a.selected {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+/* Основной контейнер */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Боковое меню */
+.side-menu {
+    width: 200px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.side-menu a {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.side-menu a.selected {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+/* Контент */
+.content {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Табличная вёрстка */
+.table-layout table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.table-layout th,
+.table-layout td {
+    border: 1px solid #bdc3c7;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.table-layout th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.table-layout td {
+    background-color: #f9f9f9;
+}
+
+/* Блочная вёрстка */
+.block-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.block-col {
+    flex: 1;
+    min-width: 120px;
+    background: #f9f9f9;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.block-col h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 24px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.block-col p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* Одиночный блок */
+.single-block {
+    max-width: 300px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    border: 3px solid #e74c3c;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.single-block h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 28px;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+}
+
+.single-block p {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+/* Стили для ссылок внутри таблицы */
+.num-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.num-link:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.num-link-static {
+    color: #2c3e50;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+/* Подвал */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+footer p {
+    margin: 5px 0;
+}
