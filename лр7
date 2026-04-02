@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ихкайма Гайдаа - Группа 241-352 - Лабораторная работа №7 - Ввод массива</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<?php
+date_default_timezone_set('Europe/Moscow');
+?>
+
+<div class="container">
+    <h1>Ихкайма Гайдаа (241-352) - ЛР №7</h1>
+    <h2>Ввод элементов массива</h2>
+    
+    <form method="post" action="sort.php" target="_blank">
+        <!-- Скрытое поле для хранения количества элементов -->
+        <input type="hidden" name="arrLength" id="arrLength" value="1">
+        
+        <!-- Выбор алгоритма сортировки -->
+        <div class="form-group">
+            <label for="algorithm">Выберите алгоритм сортировки:</label>
+            <select name="algorithm" id="algorithm" required>
+                <option value="selection">Сортировка выбором</option>
+                <option value="bubble">Пузырьковый алгоритм</option>
+                <option value="shaker">Шейкерная сортировка</option>
+                <option value="insert">Сортировка вставками</option>
+                <option value="gnome">Алгоритм садового гнома</option>
+                <option value="shell">Алгоритм Шелла</option>
+                <option value="quick">Быстрая сортировка</option>
+                <option value="php_sort">Встроенная функция PHP (sort)</option>
+                <option value="php_rsort">Встроенная функция PHP (rsort)</option>
+            </select>
+        </div>
+        
+        <!-- Таблица для элементов массива -->
+        <table class="elements-table" id="elementsTable">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Значение элемента</th>
+                </tr>
+            </thead>
+            <tbody id="elementsBody">
+                <tr class="element-row">
+                    <td class="element-index">0</td>
+                    <td><input type="text" name="element0" placeholder="Введите число" required></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Кнопки -->
+        <div class="button-group">
+            <button type="button" class="btn btn-add" onclick="addElement()">➕ Добавить еще один элемент</button>
+            <button type="submit" class="btn btn-sort">📊 Сортировать массив</button>
+        </div>
+    </form>
+    
+    <footer>
+        <p>© 2026 Кафедра информационных технологий</p>
+        <p>Студент: Ихкайма Гайдаа (Группа 241-352)</p>
+        <p>Время: <?php echo date('d.m.Y H:i:s'); ?> (МСК)</p>
+    </footer>
+</div>
+
+<!-- JavaScript для добавления полей -->
+<script>
+function setHTML(element, html) {
+    if (element.innerHTML !== undefined) {
+        element.innerHTML = html;
+    } else {
+        var range = document.createRange();
+        range.selectNodeContents(element);
+        range.deleteContents();
+        var fragment = range.createContextualFragment(html);
+        element.appendChild(fragment);
+    }
+}
+
+function addElement() {
+    var table = document.getElementById('elementsTable');
+    var tbody = document.getElementById('elementsBody');
+    var rowCount = tbody.rows.length;
+    var newRow = tbody.insertRow(rowCount);
+    newRow.className = 'element-row';
+    
+    // Ячейка с номером
+    var cellIndex = newRow.insertCell(0);
+    cellIndex.className = 'element-index';
+    setHTML(cellIndex, rowCount);
+    
+    // Ячейка с полем ввода
+    var cellInput = newRow.insertCell(1);
+    var inputHtml = '<input type="text" name="element' + rowCount + '" placeholder="Введите число" required>';
+    setHTML(cellInput, inputHtml);
+    
+    // Обновляем скрытое поле
+    document.getElementById('arrLength').value = rowCount + 1;
+}
+</script>
+
+</body>
+</html>
