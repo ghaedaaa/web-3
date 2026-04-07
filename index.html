@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Анализ текста</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        textarea { width: 100%; height: 150px; margin: 10px 0; }
+        input[type="submit"] { padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>Введите текст для анализа</h2>
+    <form action="result.php" method="post">
+        <textarea name="data" placeholder="Введите любой текст (русский, английский, цифры, знаки препинания)..."></textarea><br>
+        <input type="submit" value="Анализировать">
+    </form>
+</body>
+</html>
